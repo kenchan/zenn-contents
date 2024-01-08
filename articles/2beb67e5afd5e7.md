@@ -3,7 +3,7 @@ title: "wsl --mountで別のVMのディスクをマウントする"
 emoji: "⛳"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [wsl2]
-published: false
+published: true
 ---
 
 WSL2で複数のディストリビューションを使っているときや、ディストリビューションを変更するときなど、VMのディスクをマウントしたい場合があります。
