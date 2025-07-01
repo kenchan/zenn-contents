@@ -5,6 +5,7 @@
         "allowEmojiAtEnd": true,
         "allowPeriodMarks": [":"]
       }
-    }
+    },
+    "preset-ai-writing": true
   }
 }
