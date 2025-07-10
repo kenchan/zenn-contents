@@ -1,41 +1,58 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+このファイルは、Claude Code (claude.ai/code) がこのリポジトリで作業する際のガイドラインを提供します。
 
-## Repository Overview
+## リポジトリの概要
 
-This is a Zenn content repository for writing and publishing technical articles and books on Zenn.dev (Japanese technical content platform). Content is written in Markdown format with YAML frontmatter.
+これは Zenn.dev（日本の技術コンテンツプラットフォーム）で技術記事や本を執筆・公開するための Zenn コンテンツリポジトリです。コンテンツは YAML フロントマターを含む Markdown 形式で記述されます。
 
-## Essential Commands
+## 必須コマンド
 
-### Content Management
-- `npx zenn preview` - Preview articles/books locally in browser
-- `npx zenn new:article` - Create a new article with generated slug
-- `npx zenn new:book` - Create a new book
-- `npx zenn list:articles` - List all articles with their metadata
+### コンテンツ管理
+- `npx zenn preview` - 記事/本をブラウザでローカルプレビュー
+- `npx zenn new:article` - 生成されたスラッグで新しい記事を作成
+- `npx zenn new:book` - 新しい本を作成
+- `npx zenn list:articles` - すべての記事とそのメタデータを一覧表示
 
-### Article Structure
-Articles must include YAML frontmatter:
+### 記事の構造
+記事には必ず YAML フロントマターを含める必要があります：
 ```yaml
 ---
-title: "Article Title"
+title: "記事のタイトル"
 emoji: "⛳"
-type: "tech" # tech: technical article / idea: idea article  
-topics: [topic1, topic2] # up to 5 topics
-published: true # or false for drafts
+type: "tech" # tech: 技術記事 / idea: アイデア記事
+topics: [topic1, topic2] # 最大5つのトピック
+published: true # ドラフトの場合は false
 ---
 ```
 
-## Project Structure
+## プロジェクト構造
 
-- `/articles/` - Individual article Markdown files (named with unique slugs)
-- `/books/` - Book content directories
-- Articles are written in Japanese
-- No testing, linting, or build processes configured
+- `/articles/` - 個別の記事 Markdown ファイル（一意のスラッグで命名）
+- `/books/` - 本のコンテンツディレクトリ
+- 記事は日本語で執筆される
+- textlint以外のテスト、リンティング、ビルドプロセスは設定されていない
 
-## Important Notes
+## 重要事項
 
-- The only dependency is `zenn-cli` - all content management happens through this CLI
-- Articles use generated slugs as filenames (e.g., `2beb67e5afd5e7.md`)
-- Content is synced with Zenn.dev platform
-- Git commits typically use Japanese commit messages
+- 唯一の依存関係は `zenn-cli` - すべてのコンテンツ管理はこの CLI を通じて行われる
+- 記事は生成されたスラッグをファイル名として使用（例：`2beb67e5afd5e7.md`）
+- コンテンツは Zenn.dev プラットフォームと同期される
+- Git コミットは通常日本語のコミットメッセージを使用
+
+## コンテンツ編集ガイドライン
+
+### 重要：textlintの使用について
+**ファイルを編集した後は、必ずtextlint-mcpを実行し、その指摘は必ず修正すること**
+
+記事（.mdファイル）を作成・編集した後は、以下のコマンドを必ず実行：
+```
+mcp__textlint__getLintFixedFileContent
+```
+
+これにより：
+- 日本語の文章表現が改善される
+- 技術文書として適切な表記に統一される
+- Zenn.devでの公開に適した形式になる
+
+**重要**: textlintの指摘事項は必ず全て修正すること。ただし、.textlintrc.jsonの編集は、ユーザーから明確な指示があった場合のみ行う。
