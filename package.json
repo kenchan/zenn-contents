@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "textlint": "textlint articles/**/*.md books/**/*.md",
-    "textlint:fix": "textlint --fix articles/**/*.md books/**/*.md"
+    "textlint:fix": "textlint --fix articles/**/*.md books/**/*.md",
+    "preview": "npx zenn preview",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
     "zenn-cli": "^0.2.1"
   },
   "devDependencies": {
+    "sharp": "^0.33.5",
     "textlint": "^15.1.0",
     "textlint-rule-preset-ai-writing": "^1.1.0",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2"
