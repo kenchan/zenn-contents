@@ -7,10 +7,33 @@ const sharp = require('sharp');
 const IMAGES_DIR = path.join(__dirname, '../images');
 const SUPPORTED_FORMATS = ['.jpg', '.jpeg', '.png'];
 
+function findImagesRecursively(dir) {
+  const imageFiles = [];
+
+  function searchDirectory(currentDir) {
+    const files = fs.readdirSync(currentDir);
+
+    for (const file of files) {
+      const fullPath = path.join(currentDir, file);
+      const stats = fs.statSync(fullPath);
+
+      if (stats.isDirectory()) {
+        searchDirectory(fullPath);
+      } else if (SUPPORTED_FORMATS.includes(path.extname(file).toLowerCase())) {
+        imageFiles.push(fullPath);
+      }
+    }
+  }
+
+  searchDirectory(dir);
+  return imageFiles;
+}
+
 async function convertToWebP(inputPath) {
   const ext = path.extname(inputPath);
   const baseName = path.basename(inputPath, ext);
-  const outputPath = path.join(IMAGES_DIR, `${baseName}.webp`);
+  const inputDir = path.dirname(inputPath);
+  const outputPath = path.join(inputDir, `${baseName}.webp`);
 
   if (fs.existsSync(outputPath)) {
     console.log(`スキップ: ${baseName}.webp は既に存在します`);
@@ -44,11 +67,7 @@ async function optimizeImages() {
     return;
   }
 
-  const files = fs.readdirSync(IMAGES_DIR);
-  const imageFiles = files.filter(file =>
-    SUPPORTED_FORMATS.includes(path.extname(file).toLowerCase()) &&
-    fs.statSync(path.join(IMAGES_DIR, file)).isFile()
-  );
+  const imageFiles = findImagesRecursively(IMAGES_DIR);
 
   if (imageFiles.length === 0) {
     console.log('変換対象の画像ファイルが見つかりません');
@@ -57,8 +76,7 @@ async function optimizeImages() {
 
   console.log(`${imageFiles.length}個の画像ファイルを処理します\n`);
 
-  for (const file of imageFiles) {
-    const inputPath = path.join(IMAGES_DIR, file);
+  for (const inputPath of imageFiles) {
     await convertToWebP(inputPath);
   }
 
