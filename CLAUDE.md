@@ -9,12 +9,20 @@
 ## 必須コマンド
 
 ### コンテンツ管理
-- `npx zenn preview` - 記事/本をブラウザでローカルプレビュー
+- `npm run preview` - 記事/本をブラウザでローカルプレビュー
 - `npx zenn new:article` - 生成されたスラッグで新しい記事を作成
 - `npx zenn new:book` - 新しい本を作成
 - `npx zenn list:articles` - すべての記事とそのメタデータを一覧表示
 
-### 記事の構造
+### 文章校正
+- `npm run textlint` - Markdown文章の校正チェック
+- `npm run textlint:fix` - 文章の自動修正
+
+### 画像最適化
+- `npm run optimize-images` - 画像をWebPに変換（再帰的検索対応）
+
+## 記事の構造
+
 記事には必ず YAML フロントマターを含める必要があります：
 ```yaml
 ---
@@ -30,15 +38,18 @@ published: true # ドラフトの場合は false
 
 - `/articles/` - 個別の記事 Markdown ファイル（一意のスラッグで命名）
 - `/books/` - 本のコンテンツディレクトリ
-- 記事は日本語で執筆される
-- textlint以外のテスト、リンティング、ビルドプロセスは設定されていない
+- `/images/` - 画像ファイル（Git LFSで管理）
+  - `/images/{article-slug}/` - 記事ごとの画像ディレクトリ
+  - 画像は連番（01.webp, 02.webp...）で命名
+- `/scripts/` - 自動化スクリプト
+  - `optimize-images.js` - 画像最適化スクリプト
 
 ## 重要事項
 
-- 唯一の依存関係は `zenn-cli` - すべてのコンテンツ管理はこの CLI を通じて行われる
 - 記事は生成されたスラッグをファイル名として使用（例：`2beb67e5afd5e7.md`）
 - コンテンツは Zenn.dev プラットフォームと同期される
 - Git コミットは通常日本語のコミットメッセージを使用
+- 画像ファイルは Git LFS で管理される
 
 ## コンテンツ編集ガイドライン
 
@@ -56,3 +67,24 @@ mcp__textlint__getLintFixedFileContent
 - Zenn.devでの公開に適した形式になる
 
 **重要**: textlintの指摘事項は必ず全て修正すること。ただし、.textlintrc.jsonの編集は、ユーザーから明確な指示があった場合のみ行う。
+
+### 画像管理ガイドライン
+
+1. **画像の配置**: 記事用の画像は `/images/{article-slug}/` ディレクトリに配置
+2. **ファイル名**: 記事内の出現順に連番で命名（01.webp, 02.webp...）
+3. **最適化**: `npm run optimize-images` でWebP変換を実行
+4. **Git LFS**: 画像ファイルは自動的にGit LFSで管理される
+
+### 画像最適化ワークフロー
+
+1. 元画像（PNG/JPG）を該当記事のディレクトリに配置
+2. `npm run optimize-images` を実行してWebP変換
+3. 記事内で画像を参照：`![](/images/{article-slug}/01.webp)`
+4. 必要に応じて画像サイズを調整（ImageMagick使用）
+
+## 依存関係
+
+- `zenn-cli` - コンテンツ管理
+- `textlint` - 文章校正
+- `sharp` - 画像最適化
+- Git LFS - 画像ファイル管理
