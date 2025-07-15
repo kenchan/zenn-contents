@@ -4,20 +4,5 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "Asia/Tokyo"
-    open-pull-requests-limit: 10
-    target-branch: "main"
     reviewers:
       - "kenchan"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-    labels:
-      - "dependencies"
-      - "javascript"
-    ignore:
-      # Major version updates require manual review
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
