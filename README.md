@@ -21,22 +21,25 @@ npm install
 - `npm run textlint:fix` - 文章の自動修正
 
 ### 画像最適化
-- `npm run optimize-images` - 画像の最適化（AVIF、WebP、JPEG対応）
+- `npm run optimize-images` - 画像をWebPに変換（再帰的検索対応）
 
-## 画像最適化について
+## 画像管理について
 
-`npm run optimize-images` コマンドを実行すると：
+### 画像の配置
+記事用の画像は `/images/{article-slug}/` ディレクトリに配置してください。
 
-1. **最新フォーマット対応**: AVIF（最高圧縮率）、WebP（高圧縮率）、JPEG（フォールバック）
-2. **レスポンシブ対応**: Mobile(320px)、Tablet(768px)、Desktop(1200px)、Large(1920px)
-3. **自動HTML生成**: `<picture>` タグを使用したレスポンシブ画像のHTMLコード例を生成
+### ファイル名規則
+- 記事内の出現順に連番で命名（01.webp, 02.webp...）
+- WebP形式を推奨
 
-### 使用方法
+### 最適化ワークフロー
+1. 元画像（PNG/JPG）を該当記事のディレクトリに配置
+2. `npm run optimize-images` を実行してWebP変換
+3. 記事内で画像を参照：`![](/images/{article-slug}/01.webp)`
+4. 必要に応じて画像サイズを調整（ImageMagick使用）
 
-1. `images/` ディレクトリに画像ファイルを配置
-2. `npm run optimize-images` を実行
-3. `images/optimized/` に最適化された画像が生成される
-4. `picture-examples.html` で使用方法を確認
+### Git LFS
+画像ファイルは自動的にGit LFSで管理されます。大きなファイルでもリポジトリサイズを軽量に保てます。
 
 ## ディレクトリ構成
 
@@ -44,10 +47,11 @@ npm install
 .
 ├── articles/           # 記事ファイル
 ├── books/             # 本のファイル
-├── images/            # 画像ファイル
-│   └── optimized/     # 最適化された画像
+├── images/            # 画像ファイル（Git LFS管理）
+│   └── {article-slug}/ # 記事ごとの画像ディレクトリ
 ├── scripts/           # 自動化スクリプト
 │   └── optimize-images.js
+├── .gitattributes     # Git LFS設定
 └── package.json
 ```
 
@@ -61,6 +65,13 @@ npm install
 - 統一された文体（である調）
 
 文章を作成したら `npm run textlint` でチェックし、`npm run textlint:fix` で自動修正を行ってください。
+
+## 依存関係
+
+- `zenn-cli` - コンテンツ管理
+- `textlint` - 文章校正
+- `sharp` - 画像最適化
+- Git LFS - 画像ファイル管理
 
 ## 参考リンク
 
