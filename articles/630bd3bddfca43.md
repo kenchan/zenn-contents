@@ -4,7 +4,7 @@ emoji: "🐧"
 type: "tech"
 topics: ["android", "claudecode", "terminal", "linux"]
 published: true
-published_at: 2025-07-16 08:00:00
+published_at: 2025-07-16 08:00
 publication_name: pepabo
 ---
 
