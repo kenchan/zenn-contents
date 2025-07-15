@@ -1,5 +1,5 @@
 ---
-title: "Google Pixel & Android 15のターミナルアプリでClaude Codeを動かそう"
+title: "Android 16の新機能！Pixel標準ターミナルでClaude Codeを動かそう"
 emoji: "🐧"
 type: "tech"
 topics: ["android", "pixel", "claudecode", "terminal", "linux"]
@@ -8,17 +8,17 @@ published: false
 
 ## はじめに
 
-2025年3月、Google Pixel & Android 15でLinuxターミナル環境が使えるようになりました。Google Pixelユーザーは追加のアプリをインストールすることなく、本格的なCLI環境を手に入れられます。
+2025年6月にリリースされたAndroid 16には、待望のネイティブLinuxターミナル環境が搭載されました。これにより、Google Pixelユーザーは追加のアプリをインストールすることなく、本格的なCLI環境を手に入れられる。
 
-この記事では、Android 16の新機能「ターミナル」を有効化し、AIコーディングアシスタント「Claude Code」をセットアップします。また、最後に現時点での注意点も紹介します。
+この記事では、Android 16の新機能「ターミナル」を有効化し、AIコーディングアシスタント「Claude Code」をセットアップする。また、最後に現時点での注意点も紹介する。
 
-## Android 15のLinuxターミナルとは
+## Android 16のLinuxターミナルとは
 
-Android 15で導入されたターミナルの主な特徴は次の通りです。
+Android 16で導入されたターミナルの主な特徴は次の通りです。
 
 -   完全なDebianベースのLinux環境であり、`apt`を使って使い慣れたツールやライブラリを自由にインストールできる。
-- アプリはセキュアな仮想マシン上で動作するため、Androidシステム本体から隔離され、安全性が保たれる。
-- デバイスをroot化、サードパーティアプリをインストールすることなく利用できる。
+-   アプリはセキュアな仮想マシン上で動作するため、Androidシステム本体から隔離され、安全性が保たれる。
+-   デバイスをroot化したり、サードパーティアプリをインストールしたりすることなく利用できる。
 
 ## Step 1: Linuxターミナルの有効化
 
@@ -32,7 +32,7 @@ Android 15で導入されたターミナルの主な特徴は次の通りです�
 
 有効化すると、アプリドロワーに「ターミナル」が追加されます。
 
-## Step 2: Claude Code (MCP) のセットアップ
+## Step 2: Claude Codeのセットアップ
 
 ターミナルを起動したら、Claude Codeをセットアップします。
 
@@ -45,9 +45,9 @@ sudo apt update
 sudo apt install -y nodejs npm git
 ```
 
-### Claude Code (MCP) のインストール
+### Claude Codeのインストール
 
-次に、`npm`を使ってClaude Code (MCP) をグローバルにインストールします。
+次に、`npm`を使ってClaude Codeをグローバルにインストールします。
 
 ```bash
 npm i -g @anthropic-ai/claude-code-mcp
@@ -103,7 +103,7 @@ claude "https://zenn.dev/zenn/articles/install-zenn-cli の内容を参考にし
 
 ## まとめ
 
-Android 16とPixelデバイスの組み合わせにより、私たちはついに、追加のアプリなしで本格的なLinux環境とAIコーディングアシスタントをポケットに入れて持ち運べるようになりました。
+Android 15とPixelデバイスの組み合わせにより、私たちはついに、追加のアプリなしで本格的なLinux環境とAIコーディングアシスタントをポケットに入れて持ち運べるようになりました。
 
 Termuxのようなサードパーティアプリも依然として強力な選択肢ですが、OS標準の機能として提供されたことの意義は大きいでしょう。
 
