@@ -2,8 +2,10 @@
 title: "Google Pixel & Android 15のターミナルアプリでClaude Codeを動かそう"
 emoji: "🐧"
 type: "tech"
-topics: ["android", "pixel", "claudecode", "terminal", "linux"]
-published: false
+topics: ["android", "claudecode", "terminal", "linux"]
+published: true
+published_at: 2025-07-16 08:00:00
+publication_name: pepabo
 ---
 
 ## はじめに
