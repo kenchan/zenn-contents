@@ -4,6 +4,7 @@ emoji: "🔍"
 type: "tech"
 topics: ["ghq", "fzf", "fish", "cli", "shell"]
 published: true
+publication_name: pepabo
 ---
 
 ## 課題
