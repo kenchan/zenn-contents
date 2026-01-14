@@ -1,5 +1,5 @@
 ---
-title: "fzfとghqで「user/repo_name」だけを絞り込み対象にする"
+title: "fzfとghqで「user/repo」だけを絞り込み対象にする"
 emoji: "🔍"
 type: "tech"
 topics: ["ghq", "fzf", "fish", "cli", "shell"]
