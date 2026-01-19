@@ -3,7 +3,8 @@ title: "開発環境現状確認 2026"
 emoji: "💻"
 type: "tech"
 topics: ["開発環境", "wsl2", "gentoo", "fish", "neovim"]
-published: false
+published: true
+publication_name: "pepabo"
 ---
 
 2026年1月時点での開発環境を記録しておく。
