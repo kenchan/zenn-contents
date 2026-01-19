@@ -10,7 +10,7 @@ published: false
 
 ## OS
 
-仕事もプライベートも Windows + WSL2 を使っている。WSL2の中では [Gentoo Linux](https://wiki.gentoo.org/wiki/Gentoo_in_WSL) を動かしている。
+仕事でもプライベートでも Windows + WSL2 を使っている。WSL2の中では [Gentoo Linux](https://wiki.gentoo.org/wiki/Gentoo_in_WSL) を動かしている。
 
 昨年末からWSL2用のstage4ファイルが公開されるようになり、インストールが簡単になった。ただし、systemd用の場合は `systemd-firstboot` がwaitingになってしまう問題がある。wsl.confにブートオプションを渡すといいと書いてあるが、私の環境ではうまくいかなかった。結局systemd-firstbootをdisableにして対処している。
 
@@ -20,9 +20,9 @@ published: false
 
 ## AI
 
-[Claude Max](https://claude.ai/) を契約している。コーディングには [Claude Code](https://docs.anthropic.com/en/docs/claude-code)、その他の作業には [Claude Desktop](https://claude.ai/download) を使っている。
+[Claude Max](https://claude.ai/) を契約している。コーディングには [Claude Code](https://docs.anthropic.com/en/docs/claude-code)、その他の作業では [Claude Desktop](https://claude.ai/download) を使っている。
 
-Google Oneを家族で契約しているので AI Proプラン にして [Gemini](https://gemini.google.com/) も使える状態にしている。OpenAIは新しいモデルが出たときにたまに試す程度。
+Google Oneを家族で契約しているので AI Proプランを利用中。[Gemini](https://gemini.google.com/) も使える。OpenAIは新しいモデルが出たときだけたまに試している。
 
 ## キーボード・マウス
 
@@ -36,31 +36,31 @@ CapsLockをCtrlにするだけ、[Ctrl2Cap](https://learn.microsoft.com/ja-jp/sy
 
 SKK を使っている。Windowsでは [CorvusSKK](https://github.com/nathancorvussolis/corvusskk) を使用。
 
-SKKは慣れると手放せなくなる。ただ、ターミナルエミュレータとの相性問題があり、日本語入力周りでトラブルが起きやすいのが悩み。Windows Terminalを選んでいるのもSKKとの相性が比較的良いから。
+SKKは慣れると手放せなくなる。ただ、ターミナルエミュレータとの相性問題があり、日本語入力周りでトラブルが起きやすい。SKKとの相性が比較的良いWindows Terminalを選んでいる。
 
 ## エディタ
 
-[Neovim](https://neovim.io/) を使っている。プラグイン管理は [lazy.nvim](https://github.com/folke/lazy.nvim) で行っていて、設定は `lua/plugins/` 以下にプラグインごとにファイルを分けて管理している。
+[Neovim](https://neovim.io/) を使っている。プラグイン管理は [lazy.nvim](https://github.com/folke/lazy.nvim) で行っていて、設定は `lua/plugins/` 以下でプラグインごとにファイルを分けて管理している。
 
 ## シェル
 
 [fish](https://fishshell.com/) を使っている。bashやzshと違ってデフォルトでいい感じになっているのが気に入っている。
 
-プロンプトは [Starship](https://starship.rs/) でカスタマイズしている。GitブランチやRubyのバージョンが表示されるようにしていて、特に[mise](https://mise.jdx.dev/)で管理しているツールのバージョンがすぐわかるのが便利。
+プロンプトは [Starship](https://starship.rs/) でカスタマイズしている。GitブランチやRubyのバージョンを表示していて、特に[mise](https://mise.jdx.dev/)管理下のツールバージョンがすぐわかり便利。
 
 ## ターミナル
 
 [Windows Terminal](https://github.com/microsoft/terminal) を使っている。なんだかんだWindowsでは描画が一番安定している。
 
-SKKを使っていると、ターミナルエミュレータによっては日本語入力でかなり困ることがある。Windows Terminalでも完璧ではないが、他よりはまし。安定性を優先してWindows Terminalに落ち着いた。
+SKKを使っていると、ターミナルエミュレータによっては日本語入力でかなり困ることがある。Windows Terminalでも完璧ではないものの、他よりはまし。安定性を優先してWindows Terminalに落ち着いた。
 
-ターミナルマルチプレクサは [zellij](https://zellij.dev/) に移行した。長年 tmux を使っていたが、最近zellijに乗り換えた。まだ慣れていない。特に選択してEnterで実行してしまうのが違和感がある。ただ選択するだけならTABなので、これも慣れだと思う。セッションの永続化とペイン分割は手放せないので、使い続けていくつもり。
+ターミナルマルチプレクサは [zellij](https://zellij.dev/) に移行した。長年 tmux を使っていたが、最近zellijに乗り換えた。まだ慣れていない。特に選択してEnterで実行してしまうのは違和感がある。ただ選択するだけならTABなので、これも慣れの問題だろう。セッションの永続化とペイン分割は手放せないので、使い続けていくつもり。
 
 ## フォント
 
-[UDEV Gothic NF](https://github.com/yuru7/udev-gothic) を使っている。BIZ UDゴシックとJetBrains Monoを合成したプログラミング向けフォントで、日本語も英語も見やすい。0が斜線になっているのが好き。NF（Nerd Font）版なのでターミナルやエディタでアイコン表示もできる。
+[UDEV Gothic NF](https://github.com/yuru7/udev-gothic) を使っている。BIZ UDゴシックとJetBrains Monoを合成したプログラミング向けフォントで、日本語と英語が見やすい。0が斜線になっているのが好き。NF（Nerd Font）版なのでターミナルやエディタでアイコン表示もできる。
 
-## 開発ツール・言語処理系管理
+## 開発ツール・言語処理系の管理
 
 なるべく portage（Gentooのパッケージ管理）で管理したいが、対応していないもの、複数バージョンを同時に入れたいもの、とにかく最新を使いたいものは [mise](https://mise.jdx.dev/) で管理している。
 
