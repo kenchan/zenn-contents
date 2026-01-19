@@ -16,11 +16,11 @@ published: false
 
 セットアップの一部は https://github.com/kenchan/wsl-setup にまとめている。
 
-[wsl2-ssh-agent](https://github.com/mame/wsl2-ssh-agent) を使って、Windows 側の SSH エージェントを WSL2 から使えるようにしている。SSH エージェントは [1Password](https://1password.com/) のものを使っている。
+[wsl2-ssh-agent](https://github.com/mame/wsl2-ssh-agent) を使って、Windows 側の SSH エージェントを WSL2 から使えるようにしている。SSH エージェントは 1Password のものを使っている。
 
 ## AI
 
-[Claude Max](https://claude.ai/) を契約している。コーディングには [Claude Code](https://docs.anthropic.com/en/docs/claude-code)、その他の作業では [Claude Desktop](https://claude.ai/download) を使っている。
+[Claude Max](https://claude.ai/) を契約している。コーディングには Claude Code、その他の作業では Claude Desktop を使っている。
 
 Google One を家族で契約しているので AI Pro プランを利用中。[Gemini](https://gemini.google.com/) も使える。OpenAI は新しいモデルが出たときだけたまに試している。
 
@@ -28,15 +28,15 @@ Google One を家族で契約しているので AI Pro プランを利用中。[
 
 [Kinesis Advantage 360](https://kinesis-ergo.com/keyboards/advantage360/) を使っている。分離型のエルゴノミクスキーボードで、手首の負担が少ない。ファームウェアのアップデートは Kinesis Clique というツールでやっている。
 
-CapsLock を Ctrl にするだけ、[Ctrl2Cap](https://learn.microsoft.com/ja-jp/sysinternals/downloads/ctrl2cap) でやっている。シンプルで安定している。
+キーリマップのソフトは入れていないが、CapsLock を Ctrl にするだけ、[Ctrl2Cap](https://learn.microsoft.com/ja-jp/sysinternals/downloads/ctrl2cap) でやっている。
 
 ポインティングデバイスは [Kensington SlimBlade Pro](https://www.kensington.com/ja-jp/p/products/electronic-control-solutions/trackball-products/slimblade-pro-trackball/) を使っている。
 
 ## 日本語入力
 
-SKK を使っている。Windows では [CorvusSKK](https://github.com/nathancorvussolis/corvusskk) を使用。
+[CorvusSKK](https://github.com/nathancorvussolis/corvusskk) を使っている。
 
-SKK は慣れると手放せなくなる。ただ、ターミナルエミュレータとの相性問題があり、日本語入力周りでトラブルが起きやすい。SKK との相性が比較的良い Windows Terminal を選んでいる。
+SKK は慣れると手放せなくなる。ただ、ターミナルエミュレータとの相性問題があり、日本語入力周りでトラブルが起きやすい。
 
 ## エディタ
 
@@ -54,7 +54,7 @@ SKK は慣れると手放せなくなる。ただ、ターミナルエミュレ�
 
 SKK を使っていると、ターミナルエミュレータによっては日本語入力でかなり困ることがある。Windows Terminal でも完璧ではないものの、他よりはまし。安定性を優先して Windows Terminal に落ち着いた。
 
-ターミナルマルチプレクサは [zellij](https://zellij.dev/) に移行した。長年 tmux を使っていたが、最近 zellij に乗り換えた。まだ慣れていない。特に選択して Enter で実行してしまうのは違和感がある。ただ選択するだけなら TAB なので、これも慣れの問題だろう。セッションの永続化とペイン分割は手放せないので、使い続けていくつもり。
+ターミナルマルチプレクサは [zellij](https://zellij.dev/) に移行した。長年 tmux を使っていたのでまだ慣れていないが、感想は[開発環境更新 2026, 建設ビジネス を読んだ - HsbtDiary(2026-01-08)](https://www.hsbt.org/diary/20260108.html)と概ね同じ。
 
 ## フォント
 
@@ -80,15 +80,15 @@ dotfilesは https://github.com/kenchan/dotfiles で公開している。
 
 ## ブラウザ
 
-仕事用は [Chrome](https://www.google.com/chrome/)、プライベート用は [Brave](https://brave.com/) を使っている。用途でブラウザを分けることでアカウントの切り替えが不要になるし、仕事とプライベートの境界も明確になる。
+仕事用は Google Chrome、プライベート用は [Brave](https://brave.com/) を使っている。
 
-AI 関連では [Claude in Chrome](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn?hl=ja) 拡張機能を使っている。
+ブラウザ x AI は [Claude in Chrome](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn?hl=ja) 拡張機能を使っている。
 
 ## ランチャー
 
 [Raycast](https://www.raycast.com/) の Windows 版を使っている。最近リリースされたばかりだが、すぐに移行した。
 
-それまでは PowerToys に付属しているコマンドパレット（PowerToys Run）を長らく使っていたが、Raycast に移行。クリップボードのヒストリーも Raycast に備わっているので、PowerToys 自体を今は削除している。
+それまでは PowerToys に付属しているコマンドパレット（PowerToys Run）を長らく使っていた。クリップボードのヒストリーも Raycast に備わっているので、PowerToys 自体を今は削除している。
 
 ## パスワードマネージャ
 
@@ -108,8 +108,8 @@ AI 関連では [Claude in Chrome](https://chromewebstore.google.com/detail/clau
 - [Natural Language Dates](https://github.com/argenos/nldates-obsidian) - 自然言語で日付リンクを作成
 - [Outliner](https://github.com/vslinko/obsidian-outliner) - リストの入れ替え操作が簡単にできる
 
-複数デバイスの Sync は、出たときから Obsidian Sync を契約していたので、今でも当時のディスカウント価格で更新できてる。ありがたい。
+Obsidian Sync の初期ユーザーなのだが、今でも当時のディスカウント価格で更新できてる。ありがたい。
 
 ## まとめ
 
-最近の代表的な変化は、Raycast と Claude（Desktop 含む）を中心にしたこと。
+最近の代表的な変化は、Raycast と Claude（Desktop 含む）を中心にしたことくらいだろうか。
