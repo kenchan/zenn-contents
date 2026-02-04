@@ -1,7 +1,7 @@
 ---
 name: new-article
 description: Zennの新しい記事を作成するワークフロー
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 # Zenn記事作成ワークフロー
