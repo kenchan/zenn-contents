@@ -6,6 +6,10 @@
         "allowPeriodMarks": [":"]
       }
     },
-    "preset-ai-writing": true
+    "preset-ai-writing": {
+      "ai-tech-writing-guideline": {
+        "allows": ["/する必要があ/"]
+      }
+    }
   }
 }
