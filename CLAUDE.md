@@ -56,15 +56,12 @@ published: true # ドラフトの場合は false
 ### 重要：textlintの使用について
 **ファイルを編集した後は、必ずtextlint-mcpを実行し、その指摘は必ず修正すること**
 
-記事（.mdファイル）を作成・編集した後は、以下のコマンドを必ず実行：
-```
-mcp__textlint__getLintFixedFileContent
-```
+記事（.mdファイル）を作成・編集した後は、以下の2ステップを必ず実行：
 
-これにより：
-- 日本語の文章表現が改善される
-- 技術文書として適切な表記に統一される
-- Zenn.devでの公開に適した形式になる
+1. `mcp__textlint__getLintFixedFileContent` で自動修正を適用
+2. `mcp__textlint__lintFile` で残りのエラーを確認
+
+`getLintFixedFileContent`は自動修正可能なエラーのみ対応します。文長超過（`sentence-length`）など自動修正できないルールは`lintFile`で検出してください。
 
 **重要**: textlintの指摘事項は必ず全て修正すること。ただし、.textlintrc.jsonの編集は、ユーザーから明確な指示があった場合のみ行う。
 
