@@ -51,7 +51,12 @@ npm run preview
 
 ## 7. textlintチェック
 
-textlint MCPの `getLintFixedFileContent` を使って文章をチェック・修正してください。指摘事項は必ず修正してください。
+以下の2ステップで文章をチェック・修正してください。
+
+1. `mcp__textlint__getLintFixedFileContent` で自動修正を適用
+2. `mcp__textlint__lintFile` で残りのエラーを確認
+
+`getLintFixedFileContent`は自動修正可能なエラーのみ対応します。文長超過など自動修正できないルールは`lintFile`で検出されるので、手動で修正してください。
 
 ## 8. レビュー・修正
 
