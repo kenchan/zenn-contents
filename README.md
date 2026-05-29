@@ -38,20 +38,16 @@ npm install
 3. 記事内で画像を参照：`![](/images/{article-slug}/01.webp)`
 4. 必要に応じて画像サイズを調整（ImageMagick使用）
 
-### Git LFS
-画像ファイルは自動的にGit LFSで管理されます。大きなファイルでもリポジトリサイズを軽量に保てます。
-
 ## ディレクトリ構成
 
 ```
 .
 ├── articles/           # 記事ファイル
 ├── books/             # 本のファイル
-├── images/            # 画像ファイル（Git LFS管理）
+├── images/            # 画像ファイル
 │   └── {article-slug}/ # 記事ごとの画像ディレクトリ
 ├── scripts/           # 自動化スクリプト
 │   └── optimize-images.js
-├── .gitattributes     # Git LFS設定
 └── package.json
 ```
 
@@ -62,7 +58,7 @@ npm install
 - 技術文書として適切な表現
 - 文章の長さ制限（100文字以内）
 - 助詞の重複チェック
-- 統一された文体（である調）
+- 統一された文体（ですます調）
 
 文章を作成したら `npm run textlint` でチェックし、`npm run textlint:fix` で自動修正を行ってください。
 
@@ -71,7 +67,6 @@ npm install
 - `zenn-cli` - コンテンツ管理
 - `textlint` - 文章校正
 - `sharp` - 画像最適化
-- Git LFS - 画像ファイル管理
 
 ## 参考リンク
 
