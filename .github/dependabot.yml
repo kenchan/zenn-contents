@@ -6,3 +6,9 @@ updates:
       interval: "weekly"
     reviewers:
       - "kenchan"
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "kenchan"
