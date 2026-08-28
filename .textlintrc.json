@@ -4,6 +4,9 @@
       "ja-no-mixed-period": {
         "allowEmojiAtEnd": true,
         "allowPeriodMarks": [":"]
+      },
+      "no-exclamation-question-mark": {
+        "allow": ["ロリポップ！"]
       }
     },
     "preset-ai-writing": {
