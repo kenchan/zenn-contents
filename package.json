@@ -17,7 +17,7 @@
     "zenn-cli": "^0.5.4"
   },
   "devDependencies": {
-    "sharp": "^0.35.4",
+    "sharp": "^0.35.5",
     "textlint": "^15.8.0",
     "textlint-rule-preset-ai-writing": "^1.1.0",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2"
